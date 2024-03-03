@@ -29,7 +29,7 @@ def initialize_session_state():
         st.session_state.token_count = 0
     if "retriever" not in st.session_state:
         AWS_ACCESS_KEY = st.secrets['AWS_ACCESS_KEY']
-        AWS_SECRET_KEY = '9sLgg7gse+Hvk5oF79GqgOeZJ9L4FHUH3rB1jKwM'
+        AWS_SECRET_KEY = 'xxx'
         AWS_REGION = "us-west-2"
 
         bedrock_client = boto3.client(
@@ -39,9 +39,9 @@ def initialize_session_state():
             aws_secret_access_key=AWS_SECRET_KEY
         )
 
-        CLOUD_ID = 'Seahawks_Gen_Ai:dXMtd2VzdC0yLmF3cy5mb3VuZC5pbzo0NDMkMTE3YmY0YTNhM2Q2NDYyOGI0ZGJhZjNiNjk3MjVlYjgkMDhhYzE0NGQ4MDk2NDI2ZGFjOTI0NTMyNjdhZmMyMjU='
+        CLOUD_ID = 'xxx'
         CLOUD_USERNAME = "elastic"
-        CLOUD_PASSWORD = 'lVLjRLFVdkALFvj4EswfnmQh'
+        CLOUD_PASSWORD = 'xxx'
 
         vector_store = ElasticsearchStore(
             es_cloud_id=CLOUD_ID,
