@@ -118,7 +118,7 @@ with prompt_placeholder:
     cols = st.columns((6, 1))
     cols[0].text_input(
         "Chat",
-        value="Who should Seahawks pick at No.16",
+        value="Who should Seahawks pick at No.17",
         label_visibility="collapsed",
         key="human_prompt",
     )
