@@ -94,6 +94,17 @@ chat_placeholder = st.container()
 prompt_placeholder = st.form("chat-form")
 credit_card_placeholder = st.empty()
 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/background.png");
+background-size: cover;
+}
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 
 ai_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/Seahawks_Chatbot_Logo.png"
 user_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/human.png"
