@@ -94,14 +94,16 @@ chat_placeholder = st.container()
 prompt_placeholder = st.form("chat-form")
 credit_card_placeholder = st.empty()
 
+
+ai_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/Seahawks_Chatbot_Logo.png"
+user_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/human.png"
+
 with chat_placeholder:
     for chat in st.session_state.history:
         div = f"""
 <div class="chat-row 
     {'' if chat.origin == 'ai' else 'row-reverse'}">
-    <img class="chat-icon" src="./app/static/{
-        'Seahawks_Chatbot_Logo.png' if chat.origin == 'ai' 
-                      else 'user_icon.png'}"
+    <img class="chat-icon" src="{image_url}"
          width=32 height=32>
     <div class="chat-bubble
     {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
