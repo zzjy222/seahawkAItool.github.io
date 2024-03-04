@@ -98,8 +98,10 @@ credit_card_placeholder = st.empty()
 ai_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/Seahawks_Chatbot_Logo.png"
 user_icon_url = "https://raw.githubusercontent.com/zzjy222/seahawkAItool.github.io/main/static/human.png"
 
+
 with chat_placeholder:
     for chat in st.session_state.history:
+        image_url = ai_icon_url if chat.origin == 'ai' else user_icon_url
         div = f"""
 <div class="chat-row 
     {'' if chat.origin == 'ai' else 'row-reverse'}">
