@@ -99,7 +99,9 @@ with chat_placeholder:
         div = f"""
 <div class="chat-row 
     {'' if chat.origin == 'ai' else 'row-reverse'}">
-    <img class="chat-icon" src="./app/static/Seahawks_Chatbot_Logo.png"
+    <img class="chat-icon" src="./app/static/{
+        'Seahawks_Chatbot_Logo.png' if chat.origin == 'ai' 
+                      else 'user_icon.png'}"
          width=32 height=32>
     <div class="chat-bubble
     {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
