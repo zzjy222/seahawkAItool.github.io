@@ -18,7 +18,7 @@ class Message:
     message: str
 
 def load_css():
-    with open("static\styles.css", "r") as f:
+    with open("static/styles.css", "r") as f:
         css = f"<style>{f.read()}</style>"
         st.markdown(css, unsafe_allow_html=True)
 
