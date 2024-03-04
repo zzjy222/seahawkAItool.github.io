@@ -99,9 +99,7 @@ with chat_placeholder:
         div = f"""
 <div class="chat-row 
     {'' if chat.origin == 'ai' else 'row-reverse'}">
-    <img class="chat-icon" src="./app/static/{
-        'Seahawks_Chatbot_Logo.png' if chat.origin == 'ai' 
-                      else 'user_icon.png'}"
+    <img class="chat-icon" src="./app/static/Seahawks_Chatbot_Logo.png"
          width=32 height=32>
     <div class="chat-bubble
     {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
@@ -118,7 +116,7 @@ with prompt_placeholder:
     cols = st.columns((6, 1))
     cols[0].text_input(
         "Chat",
-        value="Who should Seahawks pick at No.17",
+        value="Who should Seahawks pick at No.16",
         label_visibility="collapsed",
         key="human_prompt",
     )
