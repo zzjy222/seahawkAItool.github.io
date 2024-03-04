@@ -29,8 +29,8 @@ def initialize_session_state():
         st.session_state.token_count = 0
     if "retriever" not in st.session_state:
         AWS_ACCESS_KEY = st.secrets['AWS_ACCESS_KEY']
-        AWS_SECRET_KEY = 'xxx'
-        AWS_REGION = "us-west-2"
+        AWS_SECRET_KEY = st.secrets['AWS_SECRET_KEY']
+        AWS_REGION = st.secrets['AWS_REGION']
 
         bedrock_client = boto3.client(
             service_name="bedrock-runtime",
@@ -39,9 +39,9 @@ def initialize_session_state():
             aws_secret_access_key=AWS_SECRET_KEY
         )
 
-        CLOUD_ID = 'xxx'
+        CLOUD_ID = st.secrets['ELASTIC_SEARCH_ID']
         CLOUD_USERNAME = "elastic"
-        CLOUD_PASSWORD = 'xxx'
+        CLOUD_PASSWORD = st.secrets['ELASTIC_PASSWORD']
 
         vector_store = ElasticsearchStore(
             es_cloud_id=CLOUD_ID,
@@ -105,8 +105,7 @@ with chat_placeholder:
          width=32 height=32>
     <div class="chat-bubble
     {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
-        &#8203;{chat.message}
-    </div>
+        {chat.message}
 </div>
         """
         st.markdown(div, unsafe_allow_html=True)
@@ -130,10 +129,7 @@ with prompt_placeholder:
     )
 
 credit_card_placeholder.caption(f"""
-Used {st.session_state.token_count} tokens \n
-Debug Langchain conversation: 
-{st.session_state}
-""")
+Used {st.session_state.token_count} tokens""")
 
 components.html("""
 <script>
